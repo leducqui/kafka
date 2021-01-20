@@ -1,0 +1,12 @@
+version: "2"
+services:
+  zookeeper:
+    image: gog/zookeeper
+    ports:
+      - "2181:2181"
+#  kafka0:
+#    image: gog/kafka
+#    ports:
+#      - "9092:9092"
+#      - "9093:9093"
+#      - "9094:9094"
