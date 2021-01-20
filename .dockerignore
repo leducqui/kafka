@@ -3,3 +3,4 @@ Dockerfile
 kafka.iml
 .gitignore
 .dockerignore
+logs
