@@ -12,3 +12,5 @@ services:
       - "9094:9094"
     environment:
       KAFKA_OPTS: "-Djava.security.auth.login.config=/usr/gog/kafka/config/kafka_server_jaas.conf"
+    depends_on:
+      - "zookeeper"
