@@ -14,3 +14,14 @@ services:
       KAFKA_OPTS: "-Djava.security.auth.login.config=/usr/gog/kafka/config/kafka_server_jaas.conf"
     depends_on:
       - "zookeeper"
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "kafka0:9093"
+      KAFKA_PROPERTIES_FILE: "/usr/gog/kafka.properties"
+    volumes:
+      - ./kafka.properties:/usr/gog/kafka.properties
+    depends_on:
+      - "kafka0"
