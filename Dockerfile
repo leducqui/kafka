@@ -1,9 +1,10 @@
 FROM openjdk:8u212-jre-alpine
 
 ENV KAFKA_HOME="/usr/gog/kafka"
-ENV KAFKA_OPTS=$KAFKA_HOME/config/kafka_server_jaas.conf
 
 COPY . /usr/gog/kafka
+
+RUN apk add --no-cache bash
 
 WORKDIR /
 COPY entrypoint.sh /usr/gog/bin/entrypoint.sh

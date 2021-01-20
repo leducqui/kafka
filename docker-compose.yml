@@ -2,11 +2,15 @@ version: "2"
 services:
   zookeeper:
     image: gog/zookeeper
-    ports:
-      - "2181:2181"
-#  kafka0:
-#    image: gog/kafka
 #    ports:
-#      - "9092:9092"
-#      - "9093:9093"
-#      - "9094:9094"
+#      - "2181:2181"
+    network_mode: host
+  kafka0:
+    image: gog/kafka
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+      - "9094:9094"
+    environment:
+      KAFKA_OPTS: "/usr/gog/kafka/config/kafka_server_jaas.conf"
+    network_mode: host
